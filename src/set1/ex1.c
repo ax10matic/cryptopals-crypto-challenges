@@ -19,20 +19,20 @@ Always operate on raw bytes, never on encoded strings. Only use hex and base64 f
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../lib/base64.h"
-#include "../../lib/hex.h"
+#include "../libs/base64.h"
+#include "../libs/hex.h"
 
+#define HEX_IN "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
 #define EXPECTED "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"
 
 int main(){
-    char hex_in[] = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d";
-
-    char *ascii_in = NULL;
-    char *base64_out = NULL;
    
     // convert hex input string to ascii string 
-    size_t ascii_len = hex_to_ascii(hex_in, &ascii_in);
+    uint8_t *bytes_in = hex_to_bytes(HEX_IN);
+    printf("%s\n", bytes_in);
+    free(bytes_in);
 
+    /*
     base64_encode(ascii_in, ascii_len, &base64_out);
 
     printf("Base64 encoded output: %s\n", base64_out);
@@ -44,7 +44,7 @@ int main(){
         printf("The output doesn't correpond to the expected one.");
     
     free(ascii_in);
-    free(base64_out);
+    free(base64_out);*/
 
     exit(EXIT_SUCCESS);
 }
