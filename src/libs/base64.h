@@ -4,6 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-size_t base64_encode(char *in, size_t size_in, char *out);
+#define BASE64_CHARS "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+
+typedef struct{
+    size_t size;
+    char *b64_string;
+}BASE64;
+
+BASE64 *base64_encode(BYTESTRING *bytes_in);
 
 #endif
