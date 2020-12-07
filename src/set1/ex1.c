@@ -27,9 +27,9 @@ Always operate on raw bytes, never on encoded strings. Only use hex and base64 f
 
 int main(){
    
-    // convert hex input string to ascii string 
+    // convert hex input string to bytestring 
     uint8_t *bytes_in = hex_to_bytes(HEX_IN);
-    printf("%s\n", bytes_in);
+  //  printf("%s\n", bytes_in);
     free(bytes_in);
 
     /*
