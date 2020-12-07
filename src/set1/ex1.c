@@ -27,9 +27,14 @@ Always operate on raw bytes, never on encoded strings. Only use hex and base64 f
 
 int main(){
    
+    printf("Hex input: %s\n", HEX_IN);
+
     // convert hex input string to bytestring 
     uint8_t *bytes_in = hex_to_bytes(HEX_IN);
-  //  printf("%s\n", bytes_in);
+    printf("Hex to Bytes: %s\n", bytes_in);
+
+  //  char *base64 = base64_encode(bytes_in);
+
     free(bytes_in);
 
     /*

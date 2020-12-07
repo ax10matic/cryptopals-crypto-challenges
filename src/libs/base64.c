@@ -1,5 +1,5 @@
 #include "base64.h"
 
-size_t base64_encode(char *in, size_t size_in, char *out){
-
+char *base64_encode(uint8_t *bytes_in){
+    printf("%d\n", strlen(bytes_in));
 }
