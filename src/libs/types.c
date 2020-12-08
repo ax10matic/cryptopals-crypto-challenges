@@ -20,6 +20,7 @@ BYTESTRING *new_bytestring(size_t size){
     return bstr;
 }
 
+/* free all memory allocated for bytestring struct */
 void free_bytestring(BYTESTRING *bstr){
     free(bstr -> bytes);
     free(bstr);

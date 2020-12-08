@@ -2,7 +2,8 @@
 
 /* encode byte string to base64 string */
 BASE64 *base64_encode(BYTESTRING *bytes_in){
-    
+    if((bytes_in -> size % 3) != 0)
+        
 }
 
 /* allocate memory for base64 struct */
@@ -23,4 +24,10 @@ BASE64 *new_base64(size_t size){
     memset(b64 -> b64_str, 0, size);
 
     return b64;
+}
+
+/* free all memory allocated for base64 struct */
+void free_base64(BASE64 *b64){
+    free(b64 -> b64_str);
+    free(b64);
 }
