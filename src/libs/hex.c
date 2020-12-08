@@ -1,10 +1,10 @@
 #include "hex.h"
 
 
-uint8_t *hex_to_bytes(char *in){
+BYTESTRING *hex_to_bytes(char *in){
 // Returns a raw byte array or NULL if the input invalid.
 
-    uint8_t *bytes_out; 
+    BYTESTRING *bytes_out;
 
     if(in == NULL)
         return NULL;
@@ -14,9 +14,9 @@ uint8_t *hex_to_bytes(char *in){
     if((in_len % 2) != 0) 
         return NULL;
 
+
     size_t out_len = in_len / 2;
-    bytes_out = malloc(out_len);
-    memset(bytes_out, 0, out_len);
+    bytes_out = new_bytestring(out_len);
     
     // convert each pair of hex chars to byte 
     for(int i=0; i<in_len; i++){
@@ -33,7 +33,7 @@ uint8_t *hex_to_bytes(char *in){
             free(bytes_out);
             return NULL;
         }
-        bytes_out[i/2] += ascii_value << (((i + 1) % 2) * 4);
+        bytes_out -> bytes[i/2] += ascii_value << (((i + 1) % 2) * 4);
    }
     return bytes_out;
 }
