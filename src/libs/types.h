@@ -1,0 +1,17 @@
+#ifndef TYPES_H
+#define TYPES_H
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+typedef struct bytestring{
+    size_t size;
+    uint8_t *bytes;
+}BYTESTRING;
+
+BYTESTRING *new_bytestring(size_t size);
+
+void free_bytestring(BYTESTRING *bstr);
+
+#endif

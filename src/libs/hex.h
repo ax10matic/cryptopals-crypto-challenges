@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-uint8_t *hex_to_bytes(char *in);
+#include "types.h"
+
+BYTESTRING *hex_to_bytes(char *in);
 
 #endif
