@@ -10,6 +10,13 @@
 
 #define BASE64_CHARS "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-char *base64_encode(uint8_t *bytes_in);
+typedef struct base64{
+    size_t size;
+    char *b64_str;
+}BASE64;
+
+BASE64 *base64_encode(BYTESTRING*bytes_in);
+
+BASE64 *new_base64(size_t size);
 
 #endif
