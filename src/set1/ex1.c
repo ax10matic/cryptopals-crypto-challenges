@@ -31,7 +31,10 @@ int main(){
 
     // convert hex input string to bytestring 
     BYTESTRING *bytes_in = hex_to_bytes(HEX_IN);
-    printf("Hex to Bytes: %s\n", bytes_in -> bytes);
+    
+    // print bytestring 
+    printf("Hex to Bytes: ");
+    print_bytestring(bytes_in);    
     free_bytestring(bytes_in);
     /*
     BASE64 *b64_out = base64_encode(bytes_in);

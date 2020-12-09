@@ -13,6 +13,8 @@ typedef struct bytestring{
 
 BYTESTRING *new_bytestring(size_t size);
 
-void       free_bytestring(BYTESTRING *bstr);
+void        print_bytestring(BYTESTRING *bstr);
+
+void        free_bytestring(BYTESTRING *bstr);
 
 #endif

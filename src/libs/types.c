@@ -20,6 +20,12 @@ BYTESTRING *new_bytestring(size_t size){
     return bstr;
 }
 
+void print_bytestring(BYTESTRING *bs){
+    for(int i=0; i<bs -> size; i++)
+        printf("%c", bs -> bytes[i]);
+    printf("\n");
+}
+
 /* free all memory allocated for bytestring struct */
 void free_bytestring(BYTESTRING *bstr){
     free(bstr -> bytes);

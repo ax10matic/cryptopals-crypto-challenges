@@ -19,5 +19,5 @@ BASE64 *base64_encode(BYTESTRING*bytes_in);
 
 BASE64 *new_base64(size_t size);
 
-void   free_base64(BASE64 *b64);
+void    free_base64(BASE64 *b64);
 #endif
