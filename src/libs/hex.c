@@ -14,7 +14,6 @@ BYTESTRING *hex_to_bytes(char *in){
     if((in_len % 2) != 0) 
         return NULL;
 
-
     size_t out_len = in_len / 2;
     bytes_out = new_bytestring(out_len);
     

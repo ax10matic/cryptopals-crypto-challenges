@@ -3,7 +3,7 @@
 /* encode byte string to base64 string */
 BASE64 *base64_encode(BYTESTRING *bytes_in){
     if((bytes_in -> size % 3) != 0)
-        return NULL
+        return NULL;
 }
 
 /* allocate memory for base64 struct */
